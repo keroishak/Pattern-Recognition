@@ -1,0 +1,101 @@
+﻿<Window x:Class="Pattern_Recognition.View.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="550" Width="800">
+    <Grid>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2.5*" />
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Margin="0,5,0,0" Grid.Column="0" BorderThickness="1" BorderBrush="#FFD8C9C9" >
+                <Image x:Name="ClassesImg"  Source="{Binding MainImage}"  />
+            </Border>
+            <ScrollViewer Margin="0,5,0,0" Grid.Column="1">
+                <StackPanel  Background="#FFD8C9C9" Grid.Column="1" Orientation="Vertical">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+      
+                        <StackPanel Orientation="Vertical" Grid.Column="0">
+                            <TextBlock Margin="0,5,0,0" Padding="10" Text="Width"/>
+                            <TextBlock Margin="0,5,0,0" Padding="10" Text="Height"/>
+                            <TextBlock Margin="0,5,0,0"  Padding="10" Text="Class A" FontWeight="Bold" FontSize="13" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Red"  />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Green" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Blue" />
+                            <TextBlock Margin="0,5,0,0" Padding="10" Text="Class B" FontWeight="Bold" FontSize="13"/>
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Red" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Green" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Blue" />
+                            <TextBlock Margin="0,5,0,0" Padding="10" Text="Class C" FontWeight="Bold" FontSize="13" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Red" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Green" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Blue" />
+                            <TextBlock Margin="0,5,0,0" Padding="10" Text="Class D" FontWeight="Bold" FontSize="13"/>
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Red" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Green" />
+                            <TextBlock Margin="0,5,0,0" Padding="5" Text="Blue" />
+                        </StackPanel >
+                        <StackPanel   Orientation="Vertical" Grid.Column="1">
+                            <TextBox Margin="0,5,0,0" Padding="10" x:Name="Width" HorizontalAlignment="Center" Width="90"/>
+                            <TextBox Margin="0,5,0,0" Padding="10" x:Name="Height" HorizontalAlignment="Center" Width="90" />
+                            <StackPanel Margin="0,40,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassARMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassARSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassAGMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassAGSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassABMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassABSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,40,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassBRMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassBRSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassBGMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassBGSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassBBMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassBBSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,40,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassCRMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassCRSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassCGMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassCGSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassCBMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassCBSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,40,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassDRMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassDRSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassDGMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassDGSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                            <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
+                                <TextBox  Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="ClassDBMeau"  HorizontalAlignment="Left" Width="50" />
+                                <TextBox  Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="ClassDBSigma" HorizontalAlignment="Right" Width="50" />
+                            </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    <Button  Click="KickoffButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Kick off!"/>
+                </StackPanel>
+            </ScrollViewer>
+
+        </Grid>
+    </Grid>
+</Window>
