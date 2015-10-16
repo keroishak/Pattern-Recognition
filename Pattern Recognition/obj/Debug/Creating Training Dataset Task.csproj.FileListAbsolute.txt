@@ -11,3 +11,16 @@ D:\Projects\Visual Studio 2013\Projects\Pattern Recognition\Pattern Recognition\
 D:\Projects\Visual Studio 2013\Projects\Pattern Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.g.resources
 D:\Projects\Visual Studio 2013\Projects\Pattern Recognition\Pattern Recognition\obj\Debug\Pattern_Recognition.Properties.Resources.resources
 D:\Projects\Visual Studio 2013\Projects\Pattern Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csproj.GenerateResource.Cache
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.exe.config
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.exe
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.pdb
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.exe
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.pdb
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csprojResolveAssemblyReference.cache
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\MainWindow.baml
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\MainWindow.g.cs
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\App.g.cs
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition_MarkupCompile.cache
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.g.resources
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern_Recognition.Properties.Resources.resources
+C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csproj.GenerateResource.Cache

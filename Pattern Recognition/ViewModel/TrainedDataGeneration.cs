@@ -18,7 +18,20 @@ namespace Pattern_Recognition.ViewModel
         private uint height { get; set; }
         private Image img;
         private uint NumofClasses;
-        
+
+        private double NormalRandom(double mu, double sigma)
+        {
+            Random r = new Random();
+            var u1 = r.NextDouble();
+            var u2 = r.NextDouble();
+
+            var rand_std_normal = Math.Sqrt(-2.0 * Math.Log(u1)) *
+                                Math.Sin(2.0 * Math.PI * u2);
+
+            var rand_normal = mu + sigma * rand_std_normal;
+
+            return rand_normal;
+        }
         public void GenerateRandominzedColoredImage(ref List<RGB>Classes, uint height, uint width)
         {
             NumofClasses = 4;
@@ -40,15 +53,18 @@ namespace Pattern_Recognition.ViewModel
                     for (uint h = 0; h < height; ++h)
                     {
                         generatednumber = Rand.NextDouble();
-                        P.R = (byte)(Classes[WorkingClass].RMeau + generatednumber * Classes[WorkingClass].RSigma);
+                        //P.R = (byte)(Classes[WorkingClass].RMeau + generatednumber * Classes[WorkingClass].RSigma);
+                        P.R = (byte) Math.Abs(NormalRandom(Classes[WorkingClass].RMeau, Classes[WorkingClass].RSigma));
                         generatednumber = Rand.NextDouble();
-                        P.G = (byte)(Classes[WorkingClass].GMeau + generatednumber * Classes[WorkingClass].GSigma);
+                        //P.G = (byte)(Classes[WorkingClass].GMeau + generatednumber * Classes[WorkingClass].GSigma);
+                        P.G = (byte)Math.Abs(NormalRandom(Classes[WorkingClass].GMeau, Classes[WorkingClass].GSigma));
                         generatednumber = Rand.NextDouble();
-                        P.B = (byte)(Classes[WorkingClass].BMeau + generatednumber * Classes[WorkingClass].BSigma);
+                        //P.B = (byte)(Classes[WorkingClass].BMeau + generatednumber * Classes[WorkingClass].BSigma);
+                        P.B = (byte)Math.Abs(NormalRandom(Classes[WorkingClass].BMeau, Classes[WorkingClass].BSigma));
                         img.SetPixel(w,h,ref P);
                     }
                 }
-
+            SourceImage = img.Source();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

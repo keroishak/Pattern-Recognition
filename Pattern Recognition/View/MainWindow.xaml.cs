@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,7 @@ namespace Pattern_Recognition.View
         {
             InitializeComponent();
             this.DataContext = new TrainedDataGeneration();
+            ((TrainedDataGeneration)this.DataContext).PropertyChanged += this.PropertyChanged;
         }
 
         private void AddMeauNotation(object sender, RoutedEventArgs e)
@@ -59,6 +61,12 @@ namespace Pattern_Recognition.View
         {
             if (((TextBox)(sender)).Text == "Sigma")
                 ((TextBox)(sender)).Text = "";
+        }
+
+
+        public void PropertyChanged(Object sender, PropertyChangedEventArgs args)
+        {
+            ClassesImg.Source = ((TrainedDataGeneration) (sender)).SourceImage;
         }
 
         private void KickoffButton(object sender, RoutedEventArgs e)
