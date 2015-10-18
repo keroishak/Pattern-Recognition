@@ -50,7 +50,7 @@ namespace Pattern_Recognition.Model
         {
             m_width = width;
             m_height = height;
-            m_buffer = new byte[width * height*3];
+            m_buffer = new byte[width * height * 3];
         }
 
         public Pixel GetPixel(uint x, uint y)
@@ -59,25 +59,26 @@ namespace Pattern_Recognition.Model
             uint index = (y * m_width) + x;
             index *= 3;
             result.R = m_buffer[index];
-            result.G = m_buffer[index+1];
-            result.B = m_buffer[index+2];
+            result.G = m_buffer[index + 1];
+            result.B = m_buffer[index + 2];
             return result;
         }
 
-        public void SetPixel(uint x, uint y,ref Pixel p)
+        public void SetPixel(uint x, uint y, ref Pixel p)
         {
 
             uint index = (y * m_width) + x;
             index *= 3;
             m_buffer[index] = p.R;
-            m_buffer[index+1] = p.G;
-            m_buffer[index+2] = p.B;
+            m_buffer[index + 1] = p.G;
+            m_buffer[index + 2] = p.B;
         }
 
         public BitmapSource Source()
         {
+
             int stride = 3 * (int)Width;
-            BitmapSource BitImg =BitmapImage.Create((int)Width,(int)Height,96,96,PixelFormats.Rgb24,null,m_buffer,stride);
+            BitmapSource BitImg = BitmapSource.Create((int)Width, (int)Height, 96, 96, PixelFormats.Rgb24, null, m_buffer, stride);
             return BitImg;
         }
     }
