@@ -40,12 +40,12 @@ namespace Pattern_Recognition.View
         private void AddMeauNotation(object sender, RoutedEventArgs e)
         {
             if (((TextBox)(sender)).Text == "")
-                ((TextBox)(sender)).Text = "Meau";
+                ((TextBox)(sender)).Text = "Mu";
         }
 
         private void RemovenMeauNotation(object sender, RoutedEventArgs e)
         {
-            if (((TextBox)(sender)).Text == "Meau")
+            if (((TextBox)(sender)).Text == "Mu")
                 ((TextBox)(sender)).Text = "";
         }
 
