@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Model\Image.cs" />
+    <Compile Include="ViewModel\Classifiers\SingleFeatureBayseClassifier.cs" />
     <Compile Include="ViewModel\TrainedDataGeneration.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Media.Imaging;
 using Pattern_Recognition.Model;
+using Pattern_Recognition.ViewModel.Classifiers;
 namespace Pattern_Recognition.ViewModel
 {
    
@@ -17,6 +18,8 @@ namespace Pattern_Recognition.ViewModel
         private uint width { get; set; }
         private uint height { get; set; }
         private Image img;
+        private Image grayimg;
+        private Image classifiedimg;
         private uint NumofClasses;
         Random Rand;
         const double two_pi = 2.0 * 3.14159265358979323846;
@@ -38,13 +41,15 @@ namespace Pattern_Recognition.ViewModel
             return Math.Sqrt(-2.0 * Math.Log10(Rand.NextDouble())) * Math.Cos(two_pi * Rand.NextDouble());
            
         }
-        public void GenerateRandominzedColoredImage(ref List<RGB>Classes, uint height, uint width)
+        public BitmapSource GenerateRandominzedColoredImage(ref List<RGB>Classes, uint height, uint width)
         {
             NumofClasses = 4;
             
             this.width = width;
             this.height = height;
             img= new Image(width,height);
+            grayimg=new Image(width,height);
+            classifiedimg = new Image(width, height);
             Pixel P=new Pixel();
             uint Workingsegment = width / NumofClasses;
             int WorkingClass = 0;
@@ -66,10 +71,60 @@ namespace Pattern_Recognition.ViewModel
                         img.SetPixel(w,h,ref P);
                     }
                 }
-                SourceImage = img.Source();
+                
+                return img.Source();
 
         }
-
+        public BitmapSource GrayScale()
+        {
+            int x; Pixel p;
+            for(uint i=0;i<img.Width;++i)
+            {
+                for(uint j=0;j<img.Height;++j)
+                {
+                    p = img.GetPixel(i, j);
+                    x = (p.B + p.G + p.R) / 3;
+                    p.R = (byte)x;
+                    p.G = p.R;
+                    p.G = p.R;
+                    grayimg.SetPixel(i, j,ref p);
+                }
+            }
+            return grayimg.Source();
+        }
+        public BitmapSource ClassifyTrainedImage(int[]M,int[]S)
+        {
+            uint Workingsegment = width / NumofClasses;
+            int WorkingClass = 0;
+            Pixel[] segments = new Pixel[NumofClasses];
+            segments[0].R = 255;
+            segments[1].G = 255;
+            segments[2].B = 255;
+            segments[3].R = 255;
+            segments[3].G = 255;
+            for (uint w = 0; w < width; ++w)
+            {
+                if (w == Workingsegment)
+                {
+                    ++WorkingClass;
+                    Workingsegment += width / NumofClasses;
+                }
+                for (uint h = 0; h < height; ++h)
+                {
+                    classifiedimg.SetPixel(w, h,ref segments[WorkingClass]);
+                }
+            }
+            SingleFeatureBayseClassifier c = new SingleFeatureBayseClassifier(NumofClasses, ref M, ref S);
+            for (uint w = 0; w < width; ++w)
+            {
+                for (uint h = 0; h < height; ++h)
+                {
+                    WorkingClass = c.Classify(img.GetPixel(w, h).R);
+                    classifiedimg.SetPixel(w, h, ref segments[WorkingClass]);
+                }
+            }
+            return classifiedimg.Source();
+        }
         public event PropertyChangedEventHandler PropertyChanged;
        
         private BitmapSource _SourceImage;
@@ -81,7 +136,7 @@ namespace Pattern_Recognition.ViewModel
             set 
             { 
                 _SourceImage = value;
-                if (PropertyChanged != null)
+                //if (PropertyChanged != null)
                     PropertyChanged(this,new PropertyChangedEventArgs("MainImage"));
             }
             

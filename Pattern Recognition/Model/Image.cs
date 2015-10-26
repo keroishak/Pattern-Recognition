@@ -20,8 +20,6 @@ namespace Pattern_Recognition.Model
         private byte[] m_buffer;
         private uint m_width, m_height;
 
-        private BitmapImage m_bitmap;
-
         public uint Width
         {
             get { return m_width; }
@@ -76,9 +74,10 @@ namespace Pattern_Recognition.Model
 
         public BitmapSource Source()
         {
-
+           
             int stride = 3 * (int)Width;
             BitmapSource BitImg = BitmapSource.Create((int)Width, (int)Height, 96, 96, PixelFormats.Rgb24, null, m_buffer, stride);
+            List<Color> c = BitImg.Palette.Colors.ToList();
             return BitImg;
         }
     }

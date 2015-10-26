@@ -123,8 +123,34 @@ namespace Pattern_Recognition.View
             }
             else
                 MessageBox.Show("Make sure that all your inputs are numbers only!");
+        }
 
+        private void ClassificationButton(object sender, RoutedEventArgs e)
+        {
+            Regex regex = new Regex("[^0-9.-]+");
+            if (!regex.IsMatch(Class1Meau.Text) && !regex.IsMatch(Class2Meau.Text) &&
+                !regex.IsMatch(Class3Meau.Text) &&
+                !regex.IsMatch(Class4Meau.Text) && !regex.IsMatch(Class1Sigma.Text) &&
+                !regex.IsMatch(Class2Sigma.Text) && !regex.IsMatch(Class3Sigma.Text) &&
+                !regex.IsMatch(Class4Sigma.Text))
+            {
+                int[] m = new int[4];
+                m[0] = int.Parse(Class1Meau.Text);
+                m[1] = int.Parse(Class2Meau.Text);
+                m[2] = int.Parse(Class3Meau.Text);
+                m[3] = int.Parse(Class4Meau.Text);
+                int[] s = new int[4];
+                s[0] = int.Parse(Class1Sigma.Text);
+                s[1] = int.Parse(Class2Sigma.Text);
+                s[2] = int.Parse(Class3Sigma.Text);
+                s[3] = int.Parse(Class4Sigma.Text);
+                this.ClassesImg.Source = ((TrainedDataGeneration)(this.DataContext)).ClassifyTrainedImage(m, s);
+            }
+        }
 
+        private void GrayScaleButton(object sender, RoutedEventArgs e)
+        {
+            this.ClassesImg.Source =((TrainedDataGeneration)(this.DataContext)).GrayScale();
         }
     }
 }
