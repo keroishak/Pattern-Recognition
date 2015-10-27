@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace Pattern_Recognition.ViewModel.Classifiers
 {
-    class SingleFeatureBayseClassifier
+    class SingleFeatureBayesClassifier
     {
         uint NumofClasses;
         double[] priors;
         int[] Sigma;
         int[] Mu;
-        public SingleFeatureBayseClassifier(uint classes, ref int[] M, ref int[] S)
+        public SingleFeatureBayesClassifier(uint classes, ref int[] M, ref int[] S)
         {
             NumofClasses = classes;
             priors = new double[NumofClasses];

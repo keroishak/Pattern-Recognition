@@ -114,7 +114,7 @@ namespace Pattern_Recognition.ViewModel
                     classifiedimg.SetPixel(w, h,ref segments[WorkingClass]);
                 }
             }
-            SingleFeatureBayseClassifier c = new SingleFeatureBayseClassifier(NumofClasses, ref M, ref S);
+            SingleFeatureBayesClassifier c = new SingleFeatureBayesClassifier(NumofClasses, ref M, ref S);
             for (uint w = 0; w < width; ++w)
             {
                 for (uint h = 0; h < height; ++h)
