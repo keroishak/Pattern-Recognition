@@ -17,7 +17,7 @@ namespace Pattern_Recognition.ViewModel.Classifiers
             NumofClasses = classes;
             priors = new double[NumofClasses];
             for (int i = 0; i < NumofClasses; ++i)
-                priors[i] = 1 / NumofClasses;
+                priors[i] = (double)1 / NumofClasses;
                 Mu = M;
             Sigma = S;
         }
@@ -25,7 +25,7 @@ namespace Pattern_Recognition.ViewModel.Classifiers
         {
             double[] Px_i = new double[NumofClasses];
             for (int i = 0; i < NumofClasses; ++i)
-                Px_i[i] = (1 / Math.Sqrt(2 * Math.PI) * Sigma[i]) * Math.Exp(-Math.Pow((x - Mu[i]), 2) / (2 * Math.Pow(Sigma[i], 2)));
+                Px_i[i] = ((double)1 / Math.Sqrt(2 * Math.PI) * Sigma[i]) * Math.Exp(-Math.Pow((x - Mu[i]), 2) / (2 * Math.Pow(Sigma[i], 2)));
             return Px_i;
         }
         public int Classify(int x)
@@ -43,7 +43,7 @@ namespace Pattern_Recognition.ViewModel.Classifiers
                 pi_x[i] /= px;
             #endregion
 
-            // Return the index of the highest probbability of the N classes
+            // Return the index of the highest probability of the N classes
             px = 0; int ind = 0;
             for (int i = 0; i < NumofClasses; ++i)
                 if (px < pi_x[i])

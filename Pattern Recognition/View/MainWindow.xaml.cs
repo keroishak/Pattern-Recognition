@@ -119,7 +119,7 @@ namespace Pattern_Recognition.View
                     BMeau = double.Parse(ClassDBMeau.Text),
                     BSigma = double.Parse(ClassDBSigma.Text),
                 });
-                this.ClassesImg.Source = ((TrainedDataGeneration)(this.DataContext)).GenerateRandominzedColoredImage(ref Classes, uint.Parse(Height.Text), uint.Parse(Width.Text));
+                this.ClassesImg.Source =((TrainedDataGeneration)(this.DataContext)).GenerateRandominzedColoredImage(ref Classes, uint.Parse(Height.Text), uint.Parse(Width.Text));
             }
             else
                 MessageBox.Show("Make sure that all your inputs are numbers only!");

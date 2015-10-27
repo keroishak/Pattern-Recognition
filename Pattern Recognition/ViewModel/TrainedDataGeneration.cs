@@ -86,7 +86,7 @@ namespace Pattern_Recognition.ViewModel
                     x = (p.B + p.G + p.R) / 3;
                     p.R = (byte)x;
                     p.G = p.R;
-                    p.G = p.R;
+                    p.B = p.R;
                     grayimg.SetPixel(i, j,ref p);
                 }
             }
@@ -106,7 +106,7 @@ namespace Pattern_Recognition.ViewModel
             {
                 for (uint h = 0; h < height; ++h)
                 {
-                    WorkingClass = c.Classify(img.GetPixel(w, h).R);
+                    WorkingClass = c.Classify(grayimg.GetPixel(w, h).R);
                     classifiedimg.SetPixel(w, h, ref segments[WorkingClass]);
                 }
             }
@@ -123,7 +123,7 @@ namespace Pattern_Recognition.ViewModel
             set 
             { 
                 _SourceImage = value;
-                //if (PropertyChanged != null)
+                if (PropertyChanged != null)
                     PropertyChanged(this,new PropertyChangedEventArgs("MainImage"));
             }
             
