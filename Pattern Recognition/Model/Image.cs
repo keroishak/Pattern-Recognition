@@ -77,7 +77,6 @@ namespace Pattern_Recognition.Model
            
             int stride = 3 * (int)Width;
             BitmapSource BitImg = BitmapSource.Create((int)Width, (int)Height, 96, 96, PixelFormats.Rgb24, null, m_buffer, stride);
-            List<Color> c = BitImg.Palette.Colors.ToList();
             return BitImg;
         }
     }

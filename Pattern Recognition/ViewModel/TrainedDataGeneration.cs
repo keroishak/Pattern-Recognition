@@ -94,7 +94,6 @@ namespace Pattern_Recognition.ViewModel
         }
         public BitmapSource ClassifyTrainedImage(int[]M,int[]S)
         {
-            uint Workingsegment = width / NumofClasses;
             int WorkingClass = 0;
             Pixel[] segments = new Pixel[NumofClasses];
             segments[0].R = 255;
@@ -102,18 +101,6 @@ namespace Pattern_Recognition.ViewModel
             segments[2].B = 255;
             segments[3].R = 255;
             segments[3].G = 255;
-            for (uint w = 0; w < width; ++w)
-            {
-                if (w == Workingsegment)
-                {
-                    ++WorkingClass;
-                    Workingsegment += width / NumofClasses;
-                }
-                for (uint h = 0; h < height; ++h)
-                {
-                    classifiedimg.SetPixel(w, h,ref segments[WorkingClass]);
-                }
-            }
             SingleFeatureBayesClassifier c = new SingleFeatureBayesClassifier(NumofClasses, ref M, ref S);
             for (uint w = 0; w < width; ++w)
             {

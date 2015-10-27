@@ -51,7 +51,7 @@ namespace Pattern_Recognition.ViewModel.Classifiers
                     px = pi_x[i];
                     ind = i;
                 }
-            return ind + 1;
+            return ind;
         }
     }
 }
