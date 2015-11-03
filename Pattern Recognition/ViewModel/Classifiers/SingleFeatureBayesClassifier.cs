@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Pattern_Recognition.ViewModel.Classifiers
 {
-    class SingleFeatureBayesClassifier
+    class SingleFeatureBayesClassifier : IClassifier
     {
         uint NumofClasses;
         double[] priors;
         int[] Sigma;
         int[] Mu;
-        public SingleFeatureBayesClassifier(uint classes, ref int[] M, ref int[] S)
+        public SingleFeatureBayesClassifier(ref int[] M, ref int[] S)
         {
-            NumofClasses = classes;
+            NumofClasses = (uint)M.Length;
             priors = new double[NumofClasses];
             for (int i = 0; i < NumofClasses; ++i)
                 priors[i] = (double)1 / NumofClasses;

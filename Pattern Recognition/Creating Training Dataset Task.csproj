@@ -37,6 +37,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -59,8 +61,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Compile Include="Model\Image.cs" />
+    <Compile Include="Model\ImageLoader.cs" />
+    <Compile Include="ViewModel\Classifiers\IClassifier.cs" />
     <Compile Include="ViewModel\Classifiers\SingleFeatureBayesClassifier.cs" />
-    <Compile Include="ViewModel\TrainedDataGeneration.cs" />
+    <Compile Include="ViewModel\Dataset\GeneratedImageDataset.cs" />
+    <Compile Include="ViewModel\ScoreModel.cs" />
+    <Compile Include="ViewModel\TrainModel.cs" />
     <Compile Include="View\App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -97,6 +103,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

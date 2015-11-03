@@ -24,12 +24,6 @@ C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\
 C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.g.resources
 C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern_Recognition.Properties.Resources.resources
 C:\Users\Moustapha\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csproj.GenerateResource.Cache
-C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.exe.config
-C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.exe
-C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.pdb
-C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.exe
-C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.pdb
-C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csprojResolveAssemblyReference.cache
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\MainWindow.baml
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\MainWindow.g.cs
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\App.g.cs
@@ -37,3 +31,9 @@ C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.g.resources
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern_Recognition.Properties.Resources.resources
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csproj.GenerateResource.Cache
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.exe.config
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.exe
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\bin\Debug\Pattern Recognition.pdb
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.exe
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.pdb
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csprojResolveAssemblyReference.cache

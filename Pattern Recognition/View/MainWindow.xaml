@@ -94,27 +94,29 @@
                     </Grid>
                     <Button  Click="KickoffButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Kick off!"/>
                     <Button Click="GrayScaleButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Generate GrayScale"/>
+                    <Button Click="ClassificationButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Classify"/>
+                    <Button Click="LoadButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Load Image"/>
                     <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
                         <TextBlock Padding="10" Text="Class 1" FontWeight="Bold" FontSize="13"/>
-                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="Class1Meau"  HorizontalAlignment="Left" Width="50" />
+                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation" x:Name="Class1Mu" HorizontalAlignment="Right" Width="50" />
                         <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="Class1Sigma" HorizontalAlignment="Right" Width="50" />
                     </StackPanel>
                     <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
                         <TextBlock Padding="10" Text="Class 2" FontWeight="Bold" FontSize="13"/>
-                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="Class2Meau"  HorizontalAlignment="Left" Width="50" />
+                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation" x:Name="Class2Mu" HorizontalAlignment="Right" Width="50" />
                         <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="Class2Sigma" HorizontalAlignment="Right" Width="50" />
                     </StackPanel>
                     <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
                         <TextBlock Padding="10" Text="Class 3" FontWeight="Bold" FontSize="13"/>
-                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="Class3Meau"  HorizontalAlignment="Left" Width="50" />
+                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation" x:Name="Class3Mu" HorizontalAlignment="Right" Width="50" />
                         <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="Class3Sigma" HorizontalAlignment="Right" Width="50" />
                     </StackPanel>
                     <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
                         <TextBlock Padding="10" Text="Class 4" FontWeight="Bold" FontSize="13"/>
-                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation"  x:Name="Class4Meau"  HorizontalAlignment="Left" Width="50" />
+                        <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenMeauNotation" Loaded="AddMeauNotation" LostFocus="AddMeauNotation" x:Name="Class4Mu" HorizontalAlignment="Right" Width="50" />
                         <TextBox Margin="3,0,0,0" Padding="5" GotFocus="RemovenSigmaNotation" Loaded="AddSigmaNotation" LostFocus="AddSigmaNotation" x:Name="Class4Sigma" HorizontalAlignment="Right" Width="50" />
                     </StackPanel>
-                    <Button Click="ClassificationButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Classify"/>
+                    <Button Click="ClassifyLoadedImageButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Classify Loaded Image"/>
                 </StackPanel>
             </ScrollViewer>
 
