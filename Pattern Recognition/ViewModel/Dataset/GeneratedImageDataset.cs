@@ -28,7 +28,7 @@ namespace Pattern_Recognition.ViewModel.Dataset
         public Image Generate(ref List<RGB> Classes, uint height, uint width)
         {
             uint NumofClasses = (uint)Classes.Count;
-            Image img = new Image(width, height, 3);
+            Image img = new Image(width, height, 3, 4);
             Pixel P = new Pixel();
             uint Workingsegment = width / NumofClasses;
             int WorkingClass = 0;
@@ -38,6 +38,7 @@ namespace Pattern_Recognition.ViewModel.Dataset
                 {
                     ++WorkingClass;
                     Workingsegment += width / NumofClasses;
+                    img.AddClass(w);
                 }
                 for (uint h = 0; h < height; ++h)
                 {

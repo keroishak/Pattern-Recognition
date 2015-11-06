@@ -63,6 +63,7 @@
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\ImageLoader.cs" />
     <Compile Include="ViewModel\Classifiers\IClassifier.cs" />
+    <Compile Include="ViewModel\Classifiers\MultiFeatureBayesClassifier.cs" />
     <Compile Include="ViewModel\Classifiers\SingleFeatureBayesClassifier.cs" />
     <Compile Include="ViewModel\Dataset\GeneratedImageDataset.cs" />
     <Compile Include="ViewModel\ScoreModel.cs" />

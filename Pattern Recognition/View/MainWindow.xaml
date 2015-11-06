@@ -3,16 +3,17 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="550" Width="800">
     <Grid>
+        
         <Grid>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2.5*" />
+                <ColumnDefinition Width="2*" />
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Border Margin="0,5,0,0" Grid.Column="0" BorderThickness="1" BorderBrush="#FFD8C9C9" >
                 <Image x:Name="ClassesImg"  Source="{Binding MainImage}"  />
             </Border>
             <ScrollViewer Margin="0,5,0,0" Grid.Column="1">
-                <StackPanel  Background="#FFD8C9C9" Grid.Column="1" Orientation="Vertical">
+                <StackPanel  Background="#FFD8C9C9" Grid.Column="1" Orientation="Vertical">             
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
@@ -30,7 +31,7 @@
                             <TextBlock Margin="0,5,0,0" Padding="5" Text="Red" />
                             <TextBlock Margin="0,5,0,0" Padding="5" Text="Green" />
                             <TextBlock Margin="0,5,0,0" Padding="5" Text="Blue" />
-                            <TextBlock Margin="0,5,0,0" Padding="10" Text="Class C" FontWeight="Bold" FontSize="13" />
+                            <TextBlock Margin="0,5,0,0" Padding="10" FontWeight="Bold" FontSize="13" ><Run Text="Class C"/></TextBlock>
                             <TextBlock Margin="0,5,0,0" Padding="5" Text="Red" />
                             <TextBlock Margin="0,5,0,0" Padding="5" Text="Green" />
                             <TextBlock Margin="0,5,0,0" Padding="5" Text="Blue" />
@@ -93,8 +94,30 @@
                         </StackPanel>
                     </Grid>
                     <Button  Click="KickoffButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Kick off!"/>
-                    <Button Click="GrayScaleButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Generate GrayScale"/>
+                    <ComboBox Margin="0,2,0,2" x:Name="Combo" >
+                        <ComboBoxItem Tag="SingleB" Selected="SingleBSelected">SingleFetureBayesClassifier</ComboBoxItem>
+                        <ComboBoxItem Tag="MultiB" Selected="MultiBSelected">MultiFetureBayesClassifier</ComboBoxItem>
+                    </ComboBox>
+                    <Button x:Name="GrayButton" Click="GrayScaleButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Generate GrayScale"/>
+                    <DataGrid  Height="150" ItemsSource="{Binding LoosGrid}"  IsReadOnly="False"  ColumnWidth="5" x:Name="LoosMatrix">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding A}" Width="60" Header="Class A"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding B}" Width="60" Header="Class B"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding C}" Width="60" Header="Class C"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding D}" Width="60" Header="Class D"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
                     <Button Click="ClassificationButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Classify"/>
+                    <DataGrid x:Name="ConfussionGrid">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding A}" Width="60" Header="Class A"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding B}" Width="60" Header="Class B"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding C}" Width="60" Header="Class C"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding D}" Width="60" Header="Class D"/>
+                            <DataGridTextColumn IsReadOnly="False" Binding="{Binding Black}" Width="60" Header="Class Black"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <TextBlock x:Name="AccuracyTextBlock" Margin="0,3,0,3" Visibility="Collapsed"/>
                     <Button Click="LoadButton" FontSize="13" Margin="0,8,0,0" Width="200" Height="50" HorizontalAlignment="Center" Content="Load Image"/>
                     <StackPanel Margin="0,5,0,0" Orientation="Horizontal">
                         <TextBlock Padding="10" Text="Class 1" FontWeight="Bold" FontSize="13"/>

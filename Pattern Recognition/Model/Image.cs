@@ -15,7 +15,7 @@ namespace Pattern_Recognition.Model
 {
     public class Image
     {
-
+        
         private byte[] m_buffer;
         private uint m_width, m_height;
 
@@ -24,22 +24,31 @@ namespace Pattern_Recognition.Model
         private uint m_components;
 
         private Bitmap m_bitmap;
-
+        private List<uint> ClassesBoundaries;
         public uint Width
         {
             get { return m_width; }
         }
-
+        public void AddClass(uint x)
+        {
+            ClassesBoundaries.Add(x);
+        }
         public uint Height
         {
             get{return m_height;}
         }
-
+        public int Class(uint x)
+        {
+            if (ClassesBoundaries == null)
+                return 0;
+            int i=0;
+            for (; i < ClassesBoundaries.Count && x >= ClassesBoundaries[i]; ++i) ;
+            return i ;
+        }
         public byte[] Buffer
         {
             get { return m_buffer; }
         }
-
         public byte this[uint key]
         {
             get { return m_buffer[key]; }
@@ -48,12 +57,10 @@ namespace Pattern_Recognition.Model
                 m_needFlush = true;
             }
         }
-
         public uint Components
         {
             get { return m_components; }
         }
-
         public Bitmap bitmap
         {
             get
@@ -63,7 +70,6 @@ namespace Pattern_Recognition.Model
                 return m_bitmap;
             }
         }
-
         public Image(byte[] bytes, uint width, uint height, uint components)
         {
             m_buffer = bytes;
@@ -74,9 +80,10 @@ namespace Pattern_Recognition.Model
             m_needFlush = true;
             m_components = components;
         }
-
-        public Image(uint width, uint height, uint components)
+        public Image(uint width, uint height, uint components,int x=0)
         {
+            if(x!=0)
+            ClassesBoundaries = new List<uint>(x-1);
             m_bitmap = new Bitmap((int)width,(int)height,System.Drawing.Imaging.PixelFormat.Format24bppRgb);
             m_width = width;
             m_height = height;
@@ -84,7 +91,6 @@ namespace Pattern_Recognition.Model
             m_needFlush = true;
             m_components = components;
         }
-
         public Image(Bitmap bmp)
         {
             //load code
@@ -145,7 +151,6 @@ namespace Pattern_Recognition.Model
                 }
             }
         }
-
         public void GrayScale()
         {
             int x,ind; 
@@ -190,7 +195,6 @@ namespace Pattern_Recognition.Model
 
             return result;
         }
-
         public void SetPixel(uint x, uint y,ref Pixel p)
         {
 
@@ -214,7 +218,6 @@ namespace Pattern_Recognition.Model
 
             m_needFlush = true;
         }
-
         public void flush()
         {
             //flush code
@@ -263,4 +266,3 @@ namespace Pattern_Recognition.Model
         }
     }
 }
-
