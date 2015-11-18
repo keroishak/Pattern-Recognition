@@ -1,0 +1,34 @@
+﻿<Window x:Class="Pattern_Recognition.View.MultivariateDataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MultivariateDataWindow" Height="600" Width="600">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="2*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">         
+                <!--TextBlock Text="Train Precentage" TextAlignment="Center"  Width="50" Height="50" Margin="-100,0,0,0"/>
+                <TextBox x:Name="DataPrecentage" Width="50" Height="50"/-->
+                <Button Click="TrainButton" Content="Train" Width="50" Height="50" Margin="5,0,0,0"/>
+                <Button Click="ScoreButton" Content="Score" Width="50" Height="50" Margin="5,0,0,0"/>
+            </StackPanel>
+            <StackPanel  Grid.Row="1">
+            <DataGrid x:Name="ConfussionGrid" ItemsSource="{Binding}" AutoGenerateColumns="True">
+                <DataGrid.Columns>
+                        <DataGridTextColumn  Binding="{Binding Path=A }" Width="60" Header="Class A"/>
+                        <DataGridTextColumn  Binding="{Binding Path=B}" Width="60" Header="Class B"/>
+                        <DataGridTextColumn  Binding="{Binding Path=C}" Width="60" Header="Class C"/>
+                    </DataGrid.Columns>
+            </DataGrid>
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom">
+                    <TextBlock Text="Overall Accuracy" Visibility="Collapsed" x:Name="OverallAccuracylabel"/>
+                    <TextBlock Margin="5,0,0,0" Text="" x:Name="Accuracylabel"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+        
+        
+    </Grid>
+</Window>

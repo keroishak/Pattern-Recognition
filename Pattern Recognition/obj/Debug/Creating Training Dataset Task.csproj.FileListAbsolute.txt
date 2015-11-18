@@ -37,3 +37,5 @@ C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Creating Training Dataset Task.csproj.GenerateResource.Cache
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.exe
 C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\Pattern Recognition.pdb
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\MultivariateDataWindow.baml
+C:\Users\Kero Ishak\Documents\GitHub\Pattern-Recognition\Pattern Recognition\obj\Debug\View\MultivariateDataWindow.g.cs

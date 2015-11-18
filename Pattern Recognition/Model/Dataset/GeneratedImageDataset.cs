@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Pattern_Recognition.Model;
-namespace Pattern_Recognition.ViewModel.Dataset
+namespace Pattern_Recognition.Model.Dataset
 {
     class GeneratedImageDataset
     {

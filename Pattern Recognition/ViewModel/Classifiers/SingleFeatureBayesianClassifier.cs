@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace Pattern_Recognition.ViewModel.Classifiers
 {
-    class SingleFeatureBayesClassifier : IClassifier
+    class SingleFeatureBayesianClassifier : IClassifier
     {
         uint NumofClasses;
         double[] priors;
         int[] Sigma;
         int[] Mu;
-        public SingleFeatureBayesClassifier(ref int[] M, ref int[] S)
+        public SingleFeatureBayesianClassifier(ref int[] M, ref int[] S)
         {
             NumofClasses = (uint)M.Length;
             priors = new double[NumofClasses];
@@ -23,6 +24,7 @@ namespace Pattern_Recognition.ViewModel.Classifiers
         }
         double[] Normalize(int x)
         {
+            //Gaussian distribution
             double[] Px_i = new double[NumofClasses];
             for (int i = 0; i < NumofClasses; ++i)
                 Px_i[i] = ((double)1 / Math.Sqrt(2 * Math.PI) * Sigma[i]) * Math.Exp(-Math.Pow((x - Mu[i]), 2) / (2 * Math.Pow(Sigma[i], 2)));

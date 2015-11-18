@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Pattern_Recognition.ViewModel.Classifiers
 {
-    class MultiFeatureBayesClassifier
+    class MultiFeatureBayesianClassifier
     {
         int NumofFeatures, NumofActions, NumofClasses;
         double PClasses;
         int[,] Mu; int[,] Sigma;
-        public MultiFeatureBayesClassifier(ref int[,] mus, ref int[,] sigmas)
+        public MultiFeatureBayesianClassifier(ref int[,] mus, ref int[,] sigmas)
         {
             NumofActions = 5;
             NumofFeatures = mus.GetLength(1);
@@ -22,6 +22,7 @@ namespace Pattern_Recognition.ViewModel.Classifiers
         }
         double[,] Normalize(ref Pixel x)
         {
+            //Gaussian distribution
             double[,] Px_i = new double[NumofClasses, NumofFeatures];
             for (int i = 0; i < NumofClasses; ++i)
             {

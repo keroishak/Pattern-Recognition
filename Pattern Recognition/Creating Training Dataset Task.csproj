@@ -56,6 +56,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\Matrix.cs" />
+    <Compile Include="ViewModel\Classifiers\DiscriminantBayesianClassifier.cs" />
+    <Compile Include="View\MultivariateDataWindow.xaml.cs">
+      <DependentUpon>MultivariateDataWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,9 +68,9 @@
     <Compile Include="Model\Image.cs" />
     <Compile Include="Model\ImageLoader.cs" />
     <Compile Include="ViewModel\Classifiers\IClassifier.cs" />
-    <Compile Include="ViewModel\Classifiers\MultiFeatureBayesClassifier.cs" />
-    <Compile Include="ViewModel\Classifiers\SingleFeatureBayesClassifier.cs" />
-    <Compile Include="ViewModel\Dataset\GeneratedImageDataset.cs" />
+    <Compile Include="ViewModel\Classifiers\MultiFeatureBayesianClassifier.cs" />
+    <Compile Include="ViewModel\Classifiers\SingleFeatureBayesianClassifier.cs" />
+    <Compile Include="Model\Dataset\GeneratedImageDataset.cs" />
     <Compile Include="ViewModel\ScoreModel.cs" />
     <Compile Include="ViewModel\TrainModel.cs" />
     <Compile Include="View\App.xaml.cs">
@@ -76,6 +81,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\MultivariateDataWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -104,7 +113,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Model\Dataset\Iris Data.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
